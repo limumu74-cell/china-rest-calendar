@@ -21,8 +21,14 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: 安装农历库
+        run: pip install lunardate
+
       - name: 生成日历
         run: python generate_calendar.py
+
+      - name: 增加节日
+        run: python add-festivals.py
 
       - name: 提交更新
         run: |
